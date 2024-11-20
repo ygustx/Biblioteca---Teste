@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <script src="https://kit.fontawesome.com/6dda5f6271.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros Store</title>
+    <meta name="description" content="Adquira seu livro">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <span class="logo">Livros Store</span>
+            <ul class="menu">
+                <li><a href="Livraria.html">Livros</a></li>
+                <li><a href="index2.html">Sobre</a></li>
+            </ul>
+            <div class="pesquisa-container">
+                <input type="text" id="pesquisa-livro" placeholder="Pesquisar livro..." />
+                <button id="btn-pesquisar">Pesquisar</button>
+            </div>
+            <div class="sociais">
+                <a href="https://www.instagram.com/ther.sants/" target="_blank">
+                    <button><i class="fa-brands fa-instagram"></i></button>
+                </a>
+                <a href="https://www.youtube.com/watch?v=y-_Ly5Tqggc" target="_blank">
+                    <button><i class="fa-brands fa-youtube"></i></button>
+                </a>
+                <a href="https://twitter.com/EstherS67157280" target="_blank">
+                    <button><i class="fa-brands fa-twitter"></i></button>
+                </a>
+                <a href="Cadastro.html" target="_blank">
+                    <button id="logout-button"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+                </a>
+            </div>
+            <div class="menu">
+                <button onclick="toggleMenu()">Menu</button>
+                <div class="dropdown" id="dropdownMenu">
+                    <a href="#" onclick="exibirFormularioAcesso()">Acesso ADM</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="formulario-acesso">
+        <label for="senha">Digite a senha de administrador:</label>
+        <div style="position: relative;">
+            <input type="password" id="senha" placeholder="Senha">
+            <i id="eye-icon" class="fa-solid fa-eye" onclick="togglePasswordVisibility()"></i>
+        </div>
+        <button onclick="acessoADM()">Acessar</button>
+        <button onclick="cancelarAcesso()">Cancelar</button>
+    </div>
+    <main>
+        <!-- Seção principal com destaque -->
+        <div class="principal">
+            <section class="hero">
+                <div class="hero-conteudo">
+                    <span class="destaque marrom">Livros</span>
+                    <h1>Quem lê, sonha. Quem sonha, vive!</h1>
+                    <hr />
+                    <h2 class="hero-subtitulo">Venha adquirir o seu livro</h2>
+                </div>
+                <div class="hero-imagens-container">
+                    <figure><img src="assets/esth.jpg" alt="Imagem de destaque" /></figure>
+                </div>
+            </section>
+        </div>
+
+        <!-- Seção de livros disponíveis -->
+        <section class="livros">
+            <header class="livros-cabecalho">
+                <span class="destaque marrom">Livros Disponíveis</span>
+                <p class="livros-subtitulo">Compre seu livro agora!</p>
+            </header>
+            <div class="livros-lista" id="livros-container">
+                <!-- Os livros serão carregados dinamicamente aqui -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-copy">Copyright Livros Store &copy; 2024</p>
+        <p class="footer-autor">Feito com muito amor por Esther Santos</p>
+    </footer>
+
+    <script>
+        // Alternar menu suspenso
+        function toggleMenu() {
+            const dropdown = document.getElementById("dropdownMenu");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+
+        // Exibir formulário de acesso ADM
+        function exibirFormularioAcesso() {
+            document.getElementById("formulario-acesso").style.display = "block";
+        }
+
+        // Verificar a senha de administrador
+        function acessoADM() {
+            const senha = document.getElementById("senha").value;
+            if (senha === "admin123") {
+                alert("Bem-vindo, Administrador!");
+                window.location.href = "admin.html"; // Redireciona para a página de administração
+            } else {
+                alert("Senha incorreta. Acesso negado.");
+            }
+        }
+
+        // Cancelar o acesso (esconder o formulário)
+        function cancelarAcesso() {
+            document.getElementById("formulario-acesso").style.display = "none";
+        }
+
+        // Mostrar/ocultar a senha
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById("senha");
+            const eyeIcon = document.getElementById("eye-icon");
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            }
+        }
+
+        // Pesquisa de livros
+        document.getElementById("btn-pesquisar").addEventListener("click", function () {
+            const nomeLivro = document.getElementById("pesquisa-livro").value.trim().toLowerCase();
+            const livros = JSON.parse(localStorage.getItem("livros")) || [];
+
+            const livroEncontrado = livros.find(livro => livro.titulo.toLowerCase() === nomeLivro);
+
+            if (livroEncontrado) {
+                sessionStorage.setItem("livroSelecionado", JSON.stringify(livroEncontrado));
+                window.location.href = "detalhes.html";
+            } else {
+                alert("Livro não encontrado.");
+            }
+        });
+
+        // Renderizar livros dinamicamente
+        document.addEventListener("DOMContentLoaded", () => {
+            const listaLivros = document.getElementById("livros-container");
+
+            function carregarLivros() {
+                return JSON.parse(localStorage.getItem("livros")) || [];
+            }
+
+            function renderizarLivros() {
+                const livros = carregarLivros();
+                listaLivros.innerHTML = ""; // Limpar lista antes de renderizar
+
+                if (livros.length === 0) {
+                    listaLivros.innerHTML = "<p>Nenhum livro disponível no momento.</p>";
+                    return;
+                }
+
+                livros.forEach((livro) => {
+                    const livroItem = document.createElement("div");
+                    livroItem.className = "livro-item";
+                    livroItem.innerHTML = `
+                        <img src="${livro.imagem}" alt="Capa do Livro '${livro.titulo}'">
+                        <h3>${livro.titulo}</h3>
+                        <p>Autor: ${livro.autor}</p>
+                        <p>Preço: R$ ${livro.preco.toFixed(2)}</p>
+                        <p>Estoque: ${livro.estoque > 0
+                            ? livro.estoque
+                            : "<span style='color: red;'>Livro esgotado</span>"
+                        }</p>
+                        ${livro.estoque > 0
+                            ? `<button class="btn-comprar" data-id="${livro.titulo}">Comprar</button>`
+                            : ""
+                        }
+                    `;
+                    listaLivros.appendChild(livroItem);
+                });
+
+                // Adicionar eventos de clique nos botões de comprar
+                document.querySelectorAll(".btn-comprar").forEach((button) => {
+                    button.addEventListener("click", (event) => {
+                        const livroTitulo = event.target.getAttribute("data-id");
+                        const livros = carregarLivros();
+                        const livroSelecionado = livros.find(livro => livro.titulo === livroTitulo);
+
+                        if (livroSelecionado) {
+                            sessionStorage.setItem("livroSelecionado", JSON.stringify(livroSelecionado));
+                            window.location.href = "detalhes.html";
+                        }
+                    });
+                });
+            }
+
+            renderizarLivros();
+        });
+    </script>
+</body>
+
+</html>

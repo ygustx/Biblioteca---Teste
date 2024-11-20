@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500&family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&family=Roboto:wght@700&family=Teko:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eca56b;
+    color: #ffffff;
+}
+
+html {
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+/* Estilizando a barra de pesquisa */
+.pesquisa-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#pesquisa-livro {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+#btn-pesquisar {
+    padding: 6px 12px;
+    background-color: #eca56b;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#btn-pesquisar:hover {
+    background-color: #c78f4e;
+}
+
+nav {
+    max-width: 1120px;
+    margin: auto;
+    padding: 1.5rem 10rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    color: #fff2e7;
+    cursor: pointer;
+}
+
+.logo {
+    font-family: Teko;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: -29%;
+    color: #fff2e7;
+    text-transform: uppercase;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    color: #fff2e780;
+}
+
+.menu a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+.menu a::after {
+    content: "  ";
+    width: 0;
+    height: 4px;
+    background-image: linear-gradient(45deg, #e9252f, #ddb2a9);
+    position: absolute;
+    top: 30px;
+    left: 0;
+    transition: width 0.5s;
+}
+
+.menu a:hover::after {
+    width: 30px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.principal {
+    background: #d18f4d;
+}
+
+.hero {
+    max-width: 1000px;
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 6rem;
+    align-items: center;
+    padding: 0rem 2rem;
+    margin: auto;
+    overflow: clip;
+}
+
+.hero-conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.destaque {
+    font-family: Epilogue;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.marrom {
+    color: #ffffff;
+}
+
+.amarelo {
+    color: #e7a80e;
+}
+
+h1 {
+    font-family: Montserrat;
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+hr {
+    border-color: #4980a4;
+}
+
+.hero-subtitulo {
+    color: #ffffff;
+    font-family: Inter;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.hero-imagens-container {
+    max-width: 45%;
+    column-count: 1;
+    column-gap: 1rem;
+}
+
+.hero-imagens-container > figure > img {
+    width: 140%;
+    border-radius: 0.5rem;
+}
+
+.hero-imagens-containers > figure > img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+
+.botao-container {
+    width: 100%;
+    max-width: 1120px;
+    margin: auto;
+    transform: translate(0, -50%);
+}
+
+.botao-principal {
+    border: none;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    background: #fdfdfd;
+    cursor: pointer;
+}
+
+.btn-fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.sociais button {
+    width: 40px;
+    height: 40px;
+    background-image: linear-gradient(45deg, #e41d5f, #d38693);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.sociais button i {
+    font-size: 20px;
+    color: #fff2e7;
+}
+
+#logout-button {
+    background-color: #e9252f; /* Cor de fundo para o botão de logout */
+    color: #ffffff; /* Cor do texto */
+    border: none;
+    border-radius:5px;
+    width: 70px; /* Largura ajustada conforme necessário */
+    height: 40px;
+    display: flex;
+    margin-left: 190px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: -38px;
+}
+
+#logout-button i {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.receitas {
+    display: flex;
+    flex-direction: column;
+    max-width: 1120px;
+    padding: 3rem 2rem;
+    margin: auto;
+    gap: 2rem;
+}
+
+.receitas-cabecalho {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.receitas-titulo {
+    font-family: Montserrat;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fdfdfd;
+}
+
+.receitas-subtitulo {
+    color: #ffffff;
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.receitas-card-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.receitas-card-containers {
+    flex-direction: row;
+    margin-left: 200px;
+    gap: 1rem;
+}
+
+.receitas-card-containerss {
+    flex-direction: row;
+    margin-left: 500%;
+    gap: 1rem;
+}
+
+.receitas-card {
+    background: #fafafa;
+    padding: 2rem;
+    border-radius: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex-basis: 30rem;
+    width: 500px;
+}
+
+.receitas-card-cabecalho {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.receitas-card-cabecalho-detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.receita-titulo {
+    color: #000000;
+    font-family: Montserrat;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.receitas-avaliacao {
+    color: #756a67;
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.receita-descricao {
+    color: #000000;
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.receita-autor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.receita-autor > img {
+    border-radius: 20rem;
+    width: 1.5rem;
+}
+
+.receita-autor-nome {
+    color: #d30707;
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+footer {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ee7c12;
+}
+
+.footer-copy {
+    color: #fff2e7;
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.footer-autor {
+    color: rgba(255, 242, 231, 0.50);
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Estilização da seção de livros */
+.livros {
+    padding: 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.livros-cabecalho {
+    margin-bottom: 20px;
+}
+
+.livros-cabecalho .destaque {
+    font-size: 24px;
+    color: #e9633a;
+    font-weight: bold;
+}
+
+.livros-subtitulo {
+    font-size: 18px;
+    color: #333;
+}
+
+.livros-lista {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.livro-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.livro-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.livro-item h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.livro-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+.btn-comprar {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ee4e1e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-comprar:hover {
+    background-color: #553c3c;
+}

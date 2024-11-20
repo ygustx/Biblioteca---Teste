@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <script src="https://kit.fontawesome.com/6dda5f6271.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KingTea Notícias</title>
+    <meta name="description" content="Notícias e informações sobre o autismo, incluindo diagnóstico, causas, e muito mais.">
+    <link rel="stylesheet" type="text/css" href="styleee.css">
+</head>
+
+<body>
+
+    <header id="top">
+        <nav>
+            <span class="logo">Livros Store</span>
+            <ul class="menu">
+                <li><a href="index.html">Livros</a></li>
+                <li><a href="index2.html">Sobre</a></li>
+            </ul>
+            <div class="sociais">
+                <a href='https://www.instagram.com/ther.sants/?next=https%3A%2F%2Fwww.instagram.com%2Faccounts%2Fonetap%2F%3Fnext%3Dhttps%253A%252F%252Fwww.instagram.com%252Faccounts%252Fonetap%252F%253Fnext%253D%25252F%2526__coig_login%253D1%26__coig_login%3D1'
+                    target="_blank"><button><i class="fa-brands fa-instagram"></i></button></a>
+                <a href='https://www.youtube.com/watch?v=y-_Ly5Tqggc' target="_blank"><button><i class="fa-brands fa-youtube"></i></button></a>
+                <a href='https://twitter.com/EstherS67157280' target="_blank"><button><i class="fa-brands fa-twitter"></i></button></a>
+                <a href="logout.html" class="btn-logout">
+                    <button id="logout-button"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="principal">
+            <section class="hero">
+                <header class="hero-conteudo">
+                    <h1>O que é a leitura?</h1>
+                    <div class="texto-centralizado">
+                        <figure class="hero-imagem">
+                            <img src="assets/esth.jpg" alt="Imagem relacionada ao autismo">
+                        </figure>
+                        <p>O Transtorno do Espectro do Autismo (TEA) é um transtorno do neurodesenvolvimento que traz prejuízos na comunicação, interação social e comportamento.</p>
+                        <p>É uma condição crônica, de origem neurológica, e não uma doença. Suas causas são majoritariamente genéticas, mas fatores ambientais também influenciam.</p>
+                        <h2>Causas do Autismo</h2>
+                        <p>As causas do autismo são poligênicas e multifatoriais, com 98% dos casos sendo de origem genética. Fatores ambientais, como idade avançada dos pais e infecções durante a gestação, podem aumentar o risco.</p>
+                        <h2>Prevalência de Autismo</h2>
+                        <p>O autismo afeta cerca de 1% da população mundial. No Brasil, estima-se que haja cerca de 2 a 6 milhões de autistas, conforme diferentes estudos.</p>
+                        <h2>Como é realizado o diagnóstico do Autismo?</h2>
+                        <p>O diagnóstico é clínico, baseado no DSM-5, que define critérios claros para identificar o TEA. A avaliação envolve uma equipe multidisciplinar e pode incluir testes genéticos.</p>
+                        <ul>
+                            <li><strong>A)</strong> Déficits persistentes na comunicação social e interação social.</li>
+                            <li><strong>B)</strong> Padrões restritos e repetitivos de comportamento.</li>
+                            <li><strong>C)</strong> Sintomas presentes desde o início do desenvolvimento.</li>
+                            <li><strong>D)</strong> Prejuízos significativos no funcionamento social ou profissional.</li>
+                            <li><strong>E)</strong> Sinais não explicados por outros transtornos.</li>
+                        </ul>
+                        <h2>Processo Diagnóstico</h2>
+                        <p>O diagnóstico envolve uma análise detalhada por especialistas, como neuropediatras, psiquiatras e uma equipe multidisciplinar. Diagnósticos precoces são essenciais para melhor intervenção.</p>
+                        <p><a href="https://neuroconecta.com.br/o-que-e-o-transtorno-do-espectro-do-autismo-tea/" target="_blank">Fonte: NeuroConecta</a></p>
+                    </div>
+                </header>
+            </section>
+        </div>
+        <section class="botao-container">
+            <a class="btn-fixed" href="#top">
+                <button class="botao-principal" type="button">
+                    <i class="fa-solid fa-circle-chevron-down"></i>
+                </button>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-copy">Copyright Livros Store &copy; 2024</p>
+        <p class="footer-autor">Feito com muito amor por Esther Santos</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var logoutButton = document.getElementById('logout-button');
+
+            logoutButton.addEventListener('click', function (event) {
+                event.preventDefault(); // Impede o comportamento padrão do botão
+
+                // Confirmação antes de sair
+                var confirmLogout = confirm("Tem certeza que deseja sair?");
+                if (confirmLogout) {
+                    // Redirecionamento para a página de logout
+                    window.location.href = 'logout.html';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+ 
