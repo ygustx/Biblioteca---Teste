@@ -44,6 +44,7 @@
                     <label for="imagem">Imagem do Livro:</label>
                     <input type="file" id="imagem" accept="image/*" required />
 
+                    <br>
                     <button type="submit">Adicionar Livro</button>
                 </form>
 
@@ -51,8 +52,36 @@
                 <ul id="lista-livros">
                     <!-- Os itens serão adicionados dinamicamente -->
                 </ul>
+
+                <!-- PESQUISAR USUÁRIO -->
+                <br>
+                <h2>Pesquisar Usuários</h2>
+                <form id="form-adicionar-livro" method="POST" action="pesquisar_user.php">
+                        <input type="text" name="nome" placeholder="Digite seu nome">
+                 <br>
+
+                     <button type="submit">Pesquisar</button>
+                
+             </form>
+
+             <!-- EXCLUIR USUÁRIO -->
+
+             <br>
+             <h2>Excluir Usuários</h2>
+             <form id="form-adicionar-livro" method="POST" action="excluir_user.php">
+                    <input type="text" name="id" placeholder="Informe seu ID:">
+                    <br>
+                       <input type="text" name="nome" placeholder="Informe seu Nome:">
+                <br>
+             
+                    <button type="submit">EXCLUIR</button>
+            </form>
             </section>
+
+        
         </div>
+
+        
     </main>
 
     <footer>

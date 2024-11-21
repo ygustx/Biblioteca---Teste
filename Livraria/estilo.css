@@ -1,0 +1,26 @@
+/*
+    CSS DO PHP
+*/
+h1{
+    color: #ee7c12;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    color: #c26610;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+a {
+    color: #fff2e7;
+    font-size: 18px;
+    position: relative;
+}
+
+div{
+    color: black;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
